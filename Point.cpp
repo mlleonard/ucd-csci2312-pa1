@@ -1,4 +1,6 @@
 #include "Point.h"
+#include <cmath>
+//#include "stdlib.h"
 
 // Default constructor
 // Initializes the point to (0.0, 0.0)
@@ -41,3 +43,24 @@ double Point::getX() {
 double Point::getY() {
   return y;
 }
+
+// Distance between
+double Point::distanceTo(Point& secondPoint)
+{
+
+  double distance;
+  double height;
+  double length;
+  double X2, Y2;
+
+  Y2 = secondPoint.getY();
+  height = std::abs(y-Y2);
+
+  X2 = secondPoint.getX();
+  length = std::abs(x-X2);
+
+  distance = sqrt(pow(height,2) + pow(length,2));
+
+
+  return distance;
+};
